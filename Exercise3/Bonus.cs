@@ -6,7 +6,7 @@ namespace Exercise3
 {
     class Bonus
     {
-        public double GetBonusRateBySeniority(int seniority)
+        public double GetBonusRateBySeniority(int seniority) // По идее это можно было и в свойсто запихнуть.
         {
             if (seniority < 1)
             {

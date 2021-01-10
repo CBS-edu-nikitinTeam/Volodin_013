@@ -12,6 +12,29 @@ namespace Exercise3
         public Position Position { get; set; }
         public int Seniority { get; set; }
 
+        public double Bonus
+        {
+            get
+            {
+                if (Seniority < 1)
+                {
+                    return Seniority;
+                }
+                else if (Seniority < 3)
+                {
+                    return 1.1 * Seniority;
+                }
+                else if (Seniority < 5)
+                {
+                    return 1.2 * Seniority;
+                }
+                else
+                {
+                    return 1.3 * Seniority;
+                }
+            }
+        }
+
         public Employee(string firstName, string lastName)
         {
             this.FirstName = firstName;
@@ -22,16 +45,16 @@ namespace Exercise3
         {
   
             if (!(this.Position.Name switch {
-                Exercise3.Position.director => true,
-                Exercise3.Position.manager => true,
-                Exercise3.Position.specialist => true,
+                Position.director => true,
+                Position.manager => true,
+                Position.specialist => true,
                 _ => false,
             }))
             {
                 return false;
             }
 
-            this.Salary = this.Position.Salary * new Bonus().GetBonusRateBySeniority(this.Seniority);
+            this.Salary = this.Position.Salary * Bonus; //new Bonus().GetBonusRateBySeniority(this.Seniority);
 
             return true;
         }

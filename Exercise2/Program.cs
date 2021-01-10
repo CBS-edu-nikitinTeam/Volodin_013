@@ -6,6 +6,7 @@ namespace Exercise2
     {
         static void Main(string[] args)
         {
+            // Замечательно!
             Menu.Open();
         }   
     }

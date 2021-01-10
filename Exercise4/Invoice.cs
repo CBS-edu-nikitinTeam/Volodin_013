@@ -35,7 +35,8 @@ namespace Exercise4
                 .Append($"Получатель: {this.customer}").Append(Environment.NewLine)
                 .Append($"Позиция: {this.article} ")
                 .Append($"в кол-ве: {this.quantity} ")
-                .Append($"по цене: {this.price:0.00}").Append(Environment.NewLine)
+                .Append($"по цене: {this.price:0.00}").Append(Environment.NewLine) // Если посмотреть на возвращаемое значение свойства NewLine - это "\n".
+                                                                                   // Так что иногда, чтобы небыло много методов можно использовать и просто этот символ. 
                 .Append($"Итого: {this.GetSumm():0.00}")
                 .Append($" в том числе НДС: {(this.GetSumm() * 0.2):0.00}").Append(Environment.NewLine)
                 .ToString();

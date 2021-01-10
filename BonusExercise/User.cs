@@ -11,7 +11,7 @@ namespace BonusExercise
         public string FirstName { get; private set; }
         public int Age { get; private set; }
 
-        readonly DateTime createdAt;
+        readonly DateTime createdAt; // модификатор доступа.
 
         public User(string lastName, string firstName, string login, int age)
         {
